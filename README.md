@@ -72,8 +72,43 @@ then import into main.js in client or server
 - 'save' flag not only installs modules but also updates package.json
 - so if node folder gets wiped, or lost on sharing project, or github, then can be regenerated just by using __meteor npm install__ will use stub to replace correct versions.
 - make sure everything you install turns up in package.json
-- 
+### Importing React
+- don't need paths for npm libraries (node modules)
+- in client/main.html 
+```html
+<head>
+  <title>Score Keep</title>
+</head>
+<!-- create div to hold our React content -->
+<body>
+<div id="app"></div>
+</body>
+```
+- in client/main.js
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {meteor} from 'meteor/meteor';
 
+// takes function allows DOM content to be 
+// rendered in main.html
+// takes function as its only argument
+// gets called once the DOM is ready
+// going to render some JSX to the screen
+Meteor.startup(function() {
+
+});
+```
+- and import meteor with a path
+- summary of imports
+1. ./../imports/file
+2. 'jquery' (node modules)
+3. 'meteor/meteor' to prevent conflicts with similarly named npm modules
+### JSX lets us define our components markup within our js files
+- both templates and the code that manages them are in the same place
+- good for complex apps
+- stands for Javascript XML (an extension of the js language)
+- 
 
 
 
