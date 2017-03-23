@@ -7,3 +7,6 @@ export let greetUser = function() {
 };
 
 export let name = 'Cherry Mulliss';
+
+// Can use one default per file
+export default 'Default val';

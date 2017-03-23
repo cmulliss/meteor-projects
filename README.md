@@ -38,7 +38,44 @@ Writing a launcher script to /usr/local/bin/meteor for your convenience.
 
 ### Notes
 - ES6 uses 'let' rather than 'var'.
+## Importing and exporting
+- functions in imports folder files, eg math.js
+```javascript
+export let sum = function(a, b) {
+    return (a + b);
+};
+```
+imports in main.js in server and or client
+```javascript
+import { sum, minus, mult } from './../imports/math';
+```
+## Advanced importing and exporting
+- up to now used only 'named' exports
+- now using 'default' exports
+- each file that can export, can export __one__ default
+- can be an object, function, boolean or string
+- can export a function as a default import, in imports folder files
+```javascript
+export default function(a, b) {
+    return (a + b);
+};
+```
+then import into main.js in client or server
+## Install React and React-dom (takes our code and renders it to th browser) and exploring JSX
+- __meteor npm install react__
+- __meteror npm install react-dom__ (versions of both should be same)
+- or can do __meteor npm install react__ __react-dom__
+- npm --version, and meteor npm --version to show difference between system and bundled versions
+- installs into project, in node modules folder, with dependencies
+- need to update our package.json file, best done automatically:
+- add save flag __meteor npm install react react-dom --save__
+- 'save' flag not only installs modules but also updates package.json
+- so if node folder gets wiped, or lost on sharing project, or github, then can be regenerated just by using __meteor npm install__ will use stub to replace correct versions.
+- make sure everything you install turns up in package.json
 - 
+
+
+
 
 
 
