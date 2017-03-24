@@ -68,7 +68,8 @@ then import into main.js in client or server
 - npm --version, and meteor npm --version to show difference between system and bundled versions
 - installs into project, in node modules folder, with dependencies
 - need to update our package.json file, best done automatically:
-- add save flag __meteor npm install react react-dom --save__
+- add save flag 
+- __meteor npm install react react-dom --save__
 - 'save' flag not only installs modules but also updates package.json
 - so if node folder gets wiped, or lost on sharing project, or github, then can be regenerated just by using __meteor npm install__ will use stub to replace correct versions.
 - make sure everything you install turns up in package.json
@@ -86,6 +87,8 @@ then import into main.js in client or server
 ```
 - in client/main.js
 ```javascript
+//only need library name for node modules, not path
+//named exports need {}, meteor in this case, all meteor modules use meteor/meteor
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {meteor} from 'meteor/meteor';
@@ -108,7 +111,15 @@ Meteor.startup(function() {
 - both templates and the code that manages them are in the same place
 - good for complex apps
 - stands for Javascript XML (an extension of the js language)
-- 
+- lets us define our components markup within our js files
+- JSX runs a compiler
+- Can use __http://babeljs.io/__ to test code
+- Can only have ONE root element in a JSX statement
+- wrap in div, which is parent and p's etc are children
+- Can wrap div in () to allow proper formatting of content
+
+
+
 
 
 
